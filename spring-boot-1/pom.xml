@@ -1,0 +1,51 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.vectoracademy.springboot</groupId>
+  <artifactId>spring-boot-1</artifactId>
+  <version>1.0</version>
+  
+ <!-- se crea de otro pomp existente --> 
+  <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.2.RELEASE</version>
+    </parent>
+    
+    <dependencies>
+    <!-- se descarga tomcat para una aplicación web. Si no se pone esta dependencia sería una aplicación de escritorio -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        
+  <!-- para el scope test. Configura JUnit y Mockito -->      
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+  <!-- para los actuator (monitorizan los servicios) que incluyen: errors, environment, health, beans, info, metrics, trace, configprops, and dump. -->         
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        
+    </dependencies>
+    
+<!-- versión de java -->
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+<!-- pluging de maven que genera el jar con el tomcat dentro -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>
